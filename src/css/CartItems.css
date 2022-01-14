@@ -1,0 +1,44 @@
+/* CART ITEMS CONTAINER ----------------------------------------- */
+.cart-items,
+.cart-items * { box-sizing: border-box; }
+
+/* add item */
+.cart-items .add-item-container { padding: 10px 10px 0; text-align: center; }
+.cart-items .add-item-container button { }
+
+
+/* CART ITEM ---------------------------------------------------- */
+.cart-item,
+.cart-item * { box-sizing: border-box; }
+.cart-item { display: -ms-flexbox; display: -webkit-flex; display: flex; -ms-flex-flow: row nowrap; -webkit-flex-flow: row nowrap; flex-flow: row nowrap; align-items: center; justify-content: space-between; width: 100%; border: 1px solid #ccc; border-top: none; }
+.cart-item:nth-child(odd) { background-color: #eee; }
+
+/* default styles */
+.cart-item [class*='cart-item'] { padding: 10px; }
+.cart-item [class*='cart-item'] input { display: none; padding: 8px; font-size: 16px; }
+.cart-item .cart-item-description { width: calc(100% - 500px); }
+.cart-item .cart-item-description .value { }
+.cart-item .cart-item-description input { width: 100%; }
+.cart-item .cart-item-count { width: 100px; text-align: center; }
+.cart-item .cart-item-count .value { }
+.cart-item .cart-item-count input { width: 100%; }
+.cart-item .cart-item-cost { width: 100px; text-align: center; }
+.cart-item .cart-item-cost .value { }
+.cart-item .cart-item-cost input { width: 100%;}
+.cart-item .cart-item-cost-total { width: 100px; text-align: center; }
+.cart-item .cart-item-controls { width: 230px; text-align: center; }
+.cart-item .cart-item-controls button { margin: 0 5px; }
+.cart-item .cart-item-controls button.edit { }
+.cart-item .cart-item-controls button.update { display: none; }
+.cart-item .cart-item-controls button.delete { }
+
+/* editing styles */
+.cart-item.editing [class*='cart-item'] .value { display: none; }
+.cart-item.editing [class*='cart-item'] input { display: block; }
+.cart-item.editing .cart-item-controls button.edit { display: none; }
+.cart-item.editing .cart-item-controls button.update { display: inline-block; }
+
+/* header row */
+.cart-item.header { border: none; margin-top: 10px; background-color: #999; }
+.cart-item.header.hide { display: none; }
+.cart-item.header > div { font-weight: 700; }

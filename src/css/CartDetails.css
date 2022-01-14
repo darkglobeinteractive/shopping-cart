@@ -1,0 +1,8 @@
+/* CART DETAILS ------------------------------------------------- */
+.cart-details,
+.cart-details * { box-sizing: border-box; }
+.cart-details {  display: -ms-flexbox; display: -webkit-flex; display: flex; -ms-flex-flow: row nowrap; -webkit-flex-flow: row nowrap; flex-flow: row nowrap; justify-content: center; padding: 0 10px 10px; }
+.cart-details [class*='cart-'] { padding: 0 20px; color: #000; font-size: 30px; text-align: center; }
+.cart-details [class*='cart-'] strong { font-weight: 700; }
+.cart-details .cart-count { }
+.cart-details .cart-total { }
