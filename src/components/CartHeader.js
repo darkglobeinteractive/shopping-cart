@@ -3,7 +3,9 @@ import '../css/CartHeader.css';
 
 const CartHeader = () => {
   return (
-    <div>CartHeader</div>
+    <div className="cart-header">
+      <h1>The Greatest Shopping Cart</h1>
+    </div>
   );
 }
 

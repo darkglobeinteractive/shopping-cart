@@ -6,7 +6,23 @@ import { createStore } from 'redux';
 import App from './components/App';
 import reducers from './reducers';
 
-const store = createStore(reducers);
+const defaultState = [
+  {
+  id: 1,
+  description: 'Bucket of crow eggs',
+  count: 32,
+  cost: 5.1,
+  isEditing: false
+  },
+  {
+    id: 2,
+    description: 'Fight Milk (case)',
+    count: 3,
+    cost: 32,
+    isEditing: false
+  }
+];
+const store = createStore(reducers, { items: defaultState });
 
 ReactDOM.render(
   <Provider store={store}>
