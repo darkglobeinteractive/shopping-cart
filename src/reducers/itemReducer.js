@@ -16,6 +16,14 @@ const itemReducer = (items = [], action) => {
       return item.id !== action.payload.id;
     });
   }
+  if (action.type === 'CART_ITEM_UPDATED') {
+    return items.map(item => {
+      if (item.id === action.payload.id) {
+        return action.payload;
+      }
+      return item;
+    });
+  }
   return items;
 }
 

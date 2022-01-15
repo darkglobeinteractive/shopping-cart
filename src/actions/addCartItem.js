@@ -6,6 +6,7 @@ const addCartItem = id => {
       description: '',
       count: 0,
       cost: 0,
+      isEditing: true
     }
   }
 }

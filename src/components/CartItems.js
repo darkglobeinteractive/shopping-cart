@@ -7,6 +7,16 @@ import CartItem from './CartItem';
 const CartItems = props => {
   return (
     <div className="cart-items">
+      <div className={'cart-item header' + (parseInt(props.items.length) === 0 ? ' hide' : '')}>
+        <div className="cart-item-description">Description</div>
+        <div className="cart-item-count">Item Count</div>
+        <div className="cart-item-cost">Item Cost</div>
+        <div className="cart-item-cost-total">Total Item Cost</div>
+        <div className="cart-item-controls">Controls</div>
+      </div>
+      <div className={'cart-item empty' + (parseInt(props.items.length) > 0 ? ' hide' : '')}>
+        <div className="cart-item-empty" colSpan="5">Click the <strong>Add Item</strong> button below to begin</div>
+      </div>
       {
         props.items.map(item => {
           return (
