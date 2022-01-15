@@ -1,7 +1,7 @@
-const toggleEditing = id => {
+const toggleEditing = item => {
   return {
     type: 'EDIT_STATE_TOGGLED',
-    payload: id
+    payload: item
   }
 }
 

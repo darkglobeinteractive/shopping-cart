@@ -4,21 +4,21 @@ import { addCartItem } from '../actions';
 import '../css/CartItems.css';
 import CartItem from './CartItem';
 
-const CartItems = props => {
+const CartItems = ({ items, nextID, addCartItem }) => {
   return (
     <div className="cart-items">
-      <div className={'cart-item header' + (parseInt(props.items.length) === 0 ? ' hide' : '')}>
+      <div className={'cart-item header' + (parseInt(items.length) === 0 ? ' hide' : '')}>
         <div className="cart-item-description">Description</div>
         <div className="cart-item-count">Item Count</div>
         <div className="cart-item-cost">Item Cost</div>
         <div className="cart-item-cost-total">Total Item Cost</div>
         <div className="cart-item-controls">Controls</div>
       </div>
-      <div className={'cart-item empty' + (parseInt(props.items.length) > 0 ? ' hide' : '')}>
+      <div className={'cart-item empty' + (parseInt(items.length) > 0 ? ' hide' : '')}>
         <div className="cart-item-empty" colSpan="5">Click the <strong>Add Item</strong> button below to begin</div>
       </div>
       {
-        props.items.map(item => {
+        items.map(item => {
           return (
             <CartItem
               key={item.id}
@@ -29,7 +29,7 @@ const CartItems = props => {
         })
       }
       <div className="add-item-container">
-        <button className="add-item" onClick={() => props.addCartItem(props.nextID)}>Add Item</button>
+        <button className="add-item" onClick={() => addCartItem(nextID)}>Add Item</button>
       </div>
     </div>
   );

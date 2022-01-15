@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addCartItem, deleteCartItem } from '../actions';
 import '../css/CartDetails.css';
 
 const CartDetails = props => {
@@ -12,12 +11,13 @@ const CartDetails = props => {
   );
 }
 
+// All I need are a couple of values from state
 const mapStateToProps = state => {
-  console.log(state);
   return {
     totalCount: state.totalCount,
     totalCost: state.totalCost
   }
 }
 
+// Connect the state values above via mapStateToProps
 export default connect(mapStateToProps)(CartDetails);

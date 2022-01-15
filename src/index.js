@@ -6,6 +6,7 @@ import { createStore } from 'redux';
 import App from './components/App';
 import reducers from './reducers';
 
+/* Set initial state for testing purposes ----------------------- */
 // const defaultState = {
 //   items: [
 //     {
@@ -31,8 +32,11 @@ import reducers from './reducers';
 //   totalCost: defaultState.totalCost,
 //   totalCount: defaultState.totalCount
 // });
+
+// Create store using the combined reducers
 const store = createStore(reducers);
 
+// Wrap the parent <App /> component with <Provider store={store} /> to grant access to state in child components
 ReactDOM.render(
   <Provider store={store}>
     <App />
