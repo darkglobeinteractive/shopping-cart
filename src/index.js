@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 
 import App from './components/App';
 import reducers from './reducers';
@@ -33,8 +34,11 @@ import reducers from './reducers';
 //   totalCount: defaultState.totalCount
 // });
 
+// The following allows Redux DevTools to work
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 // Create store using the combined reducers
-const store = createStore(reducers);
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
 
 // Wrap the parent <App /> component with <Provider store={store} /> to grant access to state in child components
 ReactDOM.render(
