@@ -27,10 +27,10 @@ const CartItem = ({ item, deleteCartItem, toggleEditing, updateCartItem }) => {
           <input type="text" value={count} onChange={(e) => setCount(e.target.value)} />
         </div>
         <div className="cart-item-cost">
-          <div className="value">${parseInt(cost).toFixed(2)}</div>
+          <div className="value">${parseFloat(cost).toFixed(2)}</div>
           <input type="text" value={cost} onChange={(e) => setCost(e.target.value)} />
         </div>
-        <div className="cart-item-cost-total">${ parseInt(cost * count).toFixed(2)}</div>
+        <div className="cart-item-cost-total">${ parseFloat(cost * count).toFixed(2)}</div>
         <div className="cart-item-controls">
           <button className="edit" onClick={() => toggleEditing(item)}>Edit</button>
           <button className="update" onClick={() => updateCartItem({
